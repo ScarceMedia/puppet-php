@@ -10,3 +10,4 @@ class php::params {
       fail("${::osfamily} is not supported")
     }
   }
+}
