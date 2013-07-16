@@ -1,22 +1,20 @@
-class php {
+class php:http($ensure=latest) {
+  include ::php
   include ::php::params
 
   case $::osfamily {
     'Debian': {
-      $package = 'php5'
+      $package = 'php-http'
     }
     'RedHat': {
-      $package = 'php'
+      $package = 'php-pear-HTTP'
     }
     default: {
       fail("$::{osfamily} is not supported.")
     }
   }
 
-  if(!defined(Package[$package])){
-    package{$package:
-      ensure => $ensure
-    }  
+  package{$package:
+    ensure => $ensure
   }
-
 }

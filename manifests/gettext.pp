@@ -1,22 +1,20 @@
-class php {
+class php:gettext($ensure=latest) {
+  include ::php
   include ::php::params
 
   case $::osfamily {
     'Debian': {
-      $package = 'php5'
+      $package = 'php-gettext'
     }
     'RedHat': {
-      $package = 'php'
+      $package = 'php-php-gettext'
     }
     default: {
       fail("$::{osfamily} is not supported.")
     }
   }
 
-  if(!defined(Package[$package])){
-    package{$package:
-      ensure => $ensure
-    }  
+  package{$package:
+    ensure => $ensure
   }
-
 }

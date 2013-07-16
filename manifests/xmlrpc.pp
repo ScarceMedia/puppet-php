@@ -1,22 +1,20 @@
-class php {
+class php:xmlrpc($ensure=latest) {
+  include ::php
   include ::php::params
 
   case $::osfamily {
     'Debian': {
-      $package = 'php5'
+      $package = 'php5-xmlrpc'
     }
     'RedHat': {
-      $package = 'php'
+      $package = 'php-xmlrpc'
     }
     default: {
       fail("$::{osfamily} is not supported.")
     }
   }
 
-  if(!defined(Package[$package])){
-    package{$package:
-      ensure => $ensure
-    }  
+  package{$package:
+    ensure => $ensure
   }
-
 }

@@ -1,22 +1,20 @@
-class php {
+class php:file($ensure=latest) {
+  include ::php
   include ::php::params
 
   case $::osfamily {
     'Debian': {
-      $package = 'php5'
+      $package = 'php-file'
     }
     'RedHat': {
-      $package = 'php'
+      $package = 'php-pear-File'
     }
     default: {
       fail("$::{osfamily} is not supported.")
     }
   }
 
-  if(!defined(Package[$package])){
-    package{$package:
-      ensure => $ensure
-    }  
+  package{$package:
+    ensure => $ensure
   }
-
 }
