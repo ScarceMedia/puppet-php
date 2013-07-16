@@ -1,5 +1,4 @@
 class php::imagick($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

@@ -1,4 +1,4 @@
-class php {
+class php($ensure='installed') {
   include ::php::params
 
   case $::osfamily {
@@ -13,10 +13,9 @@ class php {
     }
   }
 
-  if(!defined(Package[$package])){
-    package{$package:
-      ensure => $ensure
-    }  
-  }
+  package{$package:
+    ensure => $ensure
+  }  
+
 
 }

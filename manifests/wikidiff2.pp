@@ -1,5 +1,4 @@
 class php::wikidiff2($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

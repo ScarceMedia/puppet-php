@@ -1,5 +1,4 @@
 class php::pear($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

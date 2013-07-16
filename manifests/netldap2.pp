@@ -1,5 +1,4 @@
 class php::netldap2($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

@@ -1,5 +1,4 @@
 class php::netftp($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

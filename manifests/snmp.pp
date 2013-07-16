@@ -1,5 +1,4 @@
 class php::snmp($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

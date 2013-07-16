@@ -1,5 +1,4 @@
 class php::netipv4($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

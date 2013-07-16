@@ -1,5 +1,4 @@
 class php::mdb2driversqlite($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

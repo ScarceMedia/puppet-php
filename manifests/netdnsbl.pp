@@ -1,5 +1,4 @@
 class php::netdnsbl($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

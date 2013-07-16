@@ -1,5 +1,4 @@
 class php::ming($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

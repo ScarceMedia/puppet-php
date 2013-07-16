@@ -1,5 +1,4 @@
 class php::jabber($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

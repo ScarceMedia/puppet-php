@@ -1,5 +1,4 @@
 class php::netping($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

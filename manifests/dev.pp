@@ -1,5 +1,4 @@
 class php::dev($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

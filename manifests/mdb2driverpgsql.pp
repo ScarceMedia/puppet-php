@@ -1,5 +1,4 @@
 class php::mdb2driverpgsql($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {

@@ -1,5 +1,4 @@
 class php::mailmimedecode($ensure=installed) {
-  include ::php
   include ::php::params
 
   case $::osfamily {
