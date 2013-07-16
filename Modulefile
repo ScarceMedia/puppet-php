@@ -1,4 +1,4 @@
-name    'scarcemedia/fping'
+name    'scarcemedia/php'
 version '0.0.1'
 source 'https://github.com/scarcemedia/puppet-php'
 author 'scarcemedia'
