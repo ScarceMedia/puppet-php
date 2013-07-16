@@ -1,4 +1,4 @@
-class php:phplayersmenu($ensure=latest) {
+class php::phplayersmenu($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:phplayersmenu($ensure=latest) {
       $package = 'libphp-phplayersmenu'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

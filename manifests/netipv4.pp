@@ -1,4 +1,4 @@
-class php:netipv4($ensure=latest) {
+class php::netipv4($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netipv4($ensure=latest) {
       $package = 'php-net-ipv4'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

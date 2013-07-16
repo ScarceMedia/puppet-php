@@ -1,4 +1,4 @@
-class php:geshi($ensure=latest) {
+class php::geshi($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:geshi($ensure=latest) {
       $package = 'php-geshi'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

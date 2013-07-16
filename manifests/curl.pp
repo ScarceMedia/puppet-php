@@ -1,4 +1,4 @@
-class php:curl($ensure=latest) {
+class php::curl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:curl($ensure=latest) {
       $package = 'php-pear-Net-Curl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

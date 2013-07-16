@@ -1,4 +1,4 @@
-class php:htmlpurifier($ensure=latest) {
+class php::htmlpurifier($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:htmlpurifier($ensure=latest) {
       $package = 'php-htmlpurifier'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

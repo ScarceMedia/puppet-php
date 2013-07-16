@@ -1,4 +1,4 @@
-class php:adodb($ensure=latest) {
+class php::adodb($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:adodb($ensure=latest) {
       $package = 'php-adodb'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

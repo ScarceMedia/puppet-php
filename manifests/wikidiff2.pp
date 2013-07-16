@@ -1,4 +1,4 @@
-class php:wikidiff2($ensure=latest) {
+class php::wikidiff2($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:wikidiff2($ensure=latest) {
       $package = 'php-wikidiff2'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

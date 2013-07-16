@@ -1,4 +1,4 @@
-class php:pager($ensure=latest) {
+class php::pager($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:pager($ensure=latest) {
       $package = 'php-pear-Pager'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

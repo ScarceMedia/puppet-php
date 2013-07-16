@@ -1,4 +1,4 @@
-class php:lasso($ensure=latest) {
+class php::lasso($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:lasso($ensure=latest) {
       $package = 'php5-lasso'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

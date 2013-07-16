@@ -1,4 +1,4 @@
-class php:httpupload($ensure=latest) {
+class php::httpupload($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:httpupload($ensure=latest) {
       $package = 'php-http-upload'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

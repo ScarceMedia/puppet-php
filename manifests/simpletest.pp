@@ -1,4 +1,4 @@
-class php:simpletest($ensure=latest) {
+class php::simpletest($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:simpletest($ensure=latest) {
       $package = 'php-simpletest'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

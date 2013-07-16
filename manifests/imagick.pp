@@ -1,4 +1,4 @@
-class php:imagick($ensure=latest) {
+class php::imagick($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:imagick($ensure=latest) {
       $package = 'php-pecl-imagick'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

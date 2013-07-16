@@ -1,4 +1,4 @@
-class php:netsocket($ensure=latest) {
+class php::netsocket($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netsocket($ensure=latest) {
       $package = 'php-net-socket'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

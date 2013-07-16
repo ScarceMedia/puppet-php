@@ -1,4 +1,4 @@
-class php:httpwebdavserver($ensure=latest) {
+class php::httpwebdavserver($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:httpwebdavserver($ensure=latest) {
       $package = 'php-http-webdav-server'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

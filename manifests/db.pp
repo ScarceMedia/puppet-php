@@ -1,4 +1,4 @@
-class php:db($ensure=latest) {
+class php::db($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:db($ensure=latest) {
       $package = 'php-pear-DB'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

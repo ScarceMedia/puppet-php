@@ -1,4 +1,4 @@
-class php:netsmtp($ensure=latest) {
+class php::netsmtp($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netsmtp($ensure=latest) {
       $package = 'php-net-smtp'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:phpsniff($ensure=latest) {
+class php::phpsniff($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:phpsniff($ensure=latest) {
       $package = 'libphp-phpsniff'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

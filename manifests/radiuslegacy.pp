@@ -1,4 +1,4 @@
-class php:radiuslegacy($ensure=latest) {
+class php::radiuslegacy($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:radiuslegacy($ensure=latest) {
       $package = 'php-radius-legacy'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

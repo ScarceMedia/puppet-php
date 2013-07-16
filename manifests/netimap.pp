@@ -1,4 +1,4 @@
-class php:netimap($ensure=latest) {
+class php::netimap($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netimap($ensure=latest) {
       $package = 'php-net-imap'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

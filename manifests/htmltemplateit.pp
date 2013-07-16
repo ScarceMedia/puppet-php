@@ -1,4 +1,4 @@
-class php:htmltemplateit($ensure=latest) {
+class php::htmltemplateit($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:htmltemplateit($ensure=latest) {
       $package = 'php-html-template-it'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

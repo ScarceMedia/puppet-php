@@ -1,4 +1,4 @@
-class php:xmlparser($ensure=latest) {
+class php::xmlparser($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:xmlparser($ensure=latest) {
       $package = 'php-xml-parser'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

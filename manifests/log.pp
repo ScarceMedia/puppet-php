@@ -1,4 +1,4 @@
-class php:log($ensure=latest) {
+class php::log($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:log($ensure=latest) {
       $package = 'php-pear-Log'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

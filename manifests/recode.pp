@@ -1,4 +1,4 @@
-class php:recode($ensure=latest) {
+class php::recode($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:recode($ensure=latest) {
       $package = 'php-recode'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

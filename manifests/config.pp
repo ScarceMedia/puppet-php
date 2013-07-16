@@ -1,4 +1,4 @@
-class php:config($ensure=latest) {
+class php::config($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:config($ensure=latest) {
       $package = 'php-config'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

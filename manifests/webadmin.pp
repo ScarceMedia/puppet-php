@@ -1,4 +1,4 @@
-class php:webadmin($ensure=latest) {
+class php::webadmin($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:webadmin($ensure=latest) {
       $package = 'mlmmj-php-web-admin'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

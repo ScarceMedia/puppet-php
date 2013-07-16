@@ -1,4 +1,4 @@
-class php:xmlserializer($ensure=latest) {
+class php::xmlserializer($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:xmlserializer($ensure=latest) {
       $package = 'php-xml-serializer'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

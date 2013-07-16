@@ -1,4 +1,4 @@
-class php:cache($ensure=latest) {
+class php::cache($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:cache($ensure=latest) {
       $package = 'php-pear-Cache'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

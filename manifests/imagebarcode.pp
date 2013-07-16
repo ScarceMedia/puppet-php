@@ -1,4 +1,4 @@
-class php:imagebarcode($ensure=latest) {
+class php::imagebarcode($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:imagebarcode($ensure=latest) {
       $package = 'php-image-barcode'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

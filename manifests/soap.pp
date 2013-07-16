@@ -1,4 +1,4 @@
-class php:soap($ensure=latest) {
+class php::soap($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:soap($ensure=latest) {
       $package = 'php-soap'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:netcheckip($ensure=latest) {
+class php::netcheckip($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netcheckip($ensure=latest) {
       $package = 'php-net-checkip'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

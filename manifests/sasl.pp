@@ -1,4 +1,4 @@
-class php:sasl($ensure=latest) {
+class php::sasl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:sasl($ensure=latest) {
       $package = 'php5-sasl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

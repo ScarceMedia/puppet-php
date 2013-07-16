@@ -1,4 +1,4 @@
-class php:pear($ensure=latest) {
+class php::pear($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:pear($ensure=latest) {
       $package = 'php-pear'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

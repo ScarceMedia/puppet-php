@@ -1,4 +1,4 @@
-class php:elisp($ensure=latest) {
+class php::elisp($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:elisp($ensure=latest) {
       $package = 'php-elisp'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

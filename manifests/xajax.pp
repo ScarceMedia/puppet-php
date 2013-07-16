@@ -1,4 +1,4 @@
-class php:xajax($ensure=latest) {
+class php::xajax($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:xajax($ensure=latest) {
       $package = 'php-xajax'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

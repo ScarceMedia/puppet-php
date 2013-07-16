@@ -1,4 +1,4 @@
-class php:textwiki($ensure=latest) {
+class php::textwiki($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:textwiki($ensure=latest) {
       $package = 'php-text-wiki'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

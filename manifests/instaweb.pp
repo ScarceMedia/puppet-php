@@ -1,4 +1,4 @@
-class php:instaweb($ensure=latest) {
+class php::instaweb($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:instaweb($ensure=latest) {
       $package = 'cakephp-instaweb'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:intl($ensure=latest) {
+class php::intl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:intl($ensure=latest) {
       $package = 'php-intl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

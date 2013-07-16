@@ -1,4 +1,4 @@
-class php:simplepie($ensure=latest) {
+class php::simplepie($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:simplepie($ensure=latest) {
       $package = 'php-simplepie'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

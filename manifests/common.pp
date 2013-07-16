@@ -1,4 +1,4 @@
-class php:common($ensure=latest) {
+class php::common($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:common($ensure=latest) {
       $package = 'php-common'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

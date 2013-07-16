@@ -1,4 +1,4 @@
-class php:tidy($ensure=latest) {
+class php::tidy($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:tidy($ensure=latest) {
       $package = 'php-tidy'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

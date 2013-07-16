@@ -1,4 +1,4 @@
-class php:compat($ensure=latest) {
+class php::compat($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:compat($ensure=latest) {
       $package = 'php-compat'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:memcache($ensure=latest) {
+class php::memcache($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:memcache($ensure=latest) {
       $package = 'php-pecl-memcache'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

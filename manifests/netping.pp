@@ -1,4 +1,4 @@
-class php:netping($ensure=latest) {
+class php::netping($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netping($ensure=latest) {
       $package = 'php-net-ping'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

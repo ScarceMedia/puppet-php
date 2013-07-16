@@ -1,4 +1,4 @@
-class php:interbase($ensure=latest) {
+class php::interbase($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:interbase($ensure=latest) {
       $package = 'php-interbase'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

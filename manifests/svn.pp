@@ -1,4 +1,4 @@
-class php:svn($ensure=latest) {
+class php::svn($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:svn($ensure=latest) {
       $package = 'php5-svn'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

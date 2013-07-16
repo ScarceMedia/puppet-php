@@ -1,4 +1,4 @@
-class php:mail($ensure=latest) {
+class php::mail($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:mail($ensure=latest) {
       $package = 'php-pear-Mail'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:mimetype($ensure=latest) {
+class php::mimetype($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:mimetype($ensure=latest) {
       $package = 'php-mime-type'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:cli($ensure=latest) {
+class php::cli($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:cli($ensure=latest) {
       $package = 'php-cli'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

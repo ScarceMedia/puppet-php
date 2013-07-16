@@ -1,4 +1,4 @@
-class php:textfiglet($ensure=latest) {
+class php::textfiglet($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:textfiglet($ensure=latest) {
       $package = 'php-text-figlet'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

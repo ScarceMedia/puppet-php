@@ -1,4 +1,4 @@
-class php:xcache($ensure=latest) {
+class php::xcache($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:xcache($ensure=latest) {
       $package = 'php-xcache'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

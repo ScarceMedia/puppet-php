@@ -1,4 +1,4 @@
-class php:netftp($ensure=latest) {
+class php::netftp($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netftp($ensure=latest) {
       $package = 'php-net-ftp'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

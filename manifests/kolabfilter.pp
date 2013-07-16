@@ -1,4 +1,4 @@
-class php:kolabfilter($ensure=latest) {
+class php::kolabfilter($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:kolabfilter($ensure=latest) {
       $package = 'php-kolab-filter'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

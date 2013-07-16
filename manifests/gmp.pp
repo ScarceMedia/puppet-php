@@ -1,4 +1,4 @@
-class php:gmp($ensure=latest) {
+class php::gmp($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:gmp($ensure=latest) {
       $package = 'php5-gmp'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:doc($ensure=latest) {
+class php::doc($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:doc($ensure=latest) {
       $package = 'php-doc'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

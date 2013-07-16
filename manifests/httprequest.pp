@@ -1,4 +1,4 @@
-class php:httprequest($ensure=latest) {
+class php::httprequest($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:httprequest($ensure=latest) {
       $package = 'php-http-request'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

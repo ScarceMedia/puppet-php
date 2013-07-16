@@ -1,4 +1,4 @@
-class php:netldap($ensure=latest) {
+class php::netldap($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netldap($ensure=latest) {
       $package = 'php-net-ldap'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

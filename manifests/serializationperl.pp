@@ -1,4 +1,4 @@
-class php:serializationperl($ensure=latest) {
+class php::serializationperl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:serializationperl($ensure=latest) {
       $package = 'libphp-serialization-perl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:htmlsafe($ensure=latest) {
+class php::htmlsafe($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:htmlsafe($ensure=latest) {
       $package = 'php-html-safe'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

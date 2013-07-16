@@ -1,4 +1,4 @@
-class php:odbc($ensure=latest) {
+class php::odbc($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:odbc($ensure=latest) {
       $package = 'php-odbc'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

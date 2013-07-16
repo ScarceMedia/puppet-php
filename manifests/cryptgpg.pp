@@ -1,4 +1,4 @@
-class php:cryptgpg($ensure=latest) {
+class php::cryptgpg($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:cryptgpg($ensure=latest) {
       $package = 'php-crypt-gpg'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

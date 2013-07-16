@@ -1,4 +1,4 @@
-class php:librdf($ensure=latest) {
+class php::librdf($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:librdf($ensure=latest) {
       $package = 'php5-librdf'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

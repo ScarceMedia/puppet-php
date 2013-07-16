@@ -1,4 +1,4 @@
-class php:docs($ensure=latest) {
+class php::docs($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:docs($ensure=latest) {
       $package = 'kdevelop-php-docs'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:textcaptcha($ensure=latest) {
+class php::textcaptcha($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:textcaptcha($ensure=latest) {
       $package = 'php-text-captcha'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

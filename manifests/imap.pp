@@ -1,4 +1,4 @@
-class php:imap($ensure=latest) {
+class php::imap($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:imap($ensure=latest) {
       $package = 'php-pear-Net-IMAP'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

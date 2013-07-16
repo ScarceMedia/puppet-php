@@ -1,4 +1,4 @@
-class php:netportscan($ensure=latest) {
+class php::netportscan($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netportscan($ensure=latest) {
       $package = 'php-net-portscan'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

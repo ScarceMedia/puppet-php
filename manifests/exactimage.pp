@@ -1,4 +1,4 @@
-class php:exactimage($ensure=latest) {
+class php::exactimage($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:exactimage($ensure=latest) {
       $package = 'php5-exactimage'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

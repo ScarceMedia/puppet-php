@@ -1,4 +1,4 @@
-class php:fpdf($ensure=latest) {
+class php::fpdf($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:fpdf($ensure=latest) {
       $package = 'php-fpdf'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:pspell($ensure=latest) {
+class php::pspell($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:pspell($ensure=latest) {
       $package = 'php-pspell'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

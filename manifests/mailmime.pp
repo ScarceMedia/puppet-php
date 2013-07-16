@@ -1,4 +1,4 @@
-class php:mailmime($ensure=latest) {
+class php::mailmime($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:mailmime($ensure=latest) {
       $package = 'php-mail-mime'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

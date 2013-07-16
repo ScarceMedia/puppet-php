@@ -1,4 +1,4 @@
-class php:netwhois($ensure=latest) {
+class php::netwhois($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netwhois($ensure=latest) {
       $package = 'php-net-whois'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:cgi($ensure=latest) {
+class php::cgi($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:cgi($ensure=latest) {
       $package = 'php5-cgi'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

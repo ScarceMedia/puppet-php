@@ -1,4 +1,4 @@
-class php:xsl($ensure=latest) {
+class php::xsl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:xsl($ensure=latest) {
       $package = 'php5-xsl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

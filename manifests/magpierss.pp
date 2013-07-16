@@ -1,4 +1,4 @@
-class php:magpierss($ensure=latest) {
+class php::magpierss($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:magpierss($ensure=latest) {
       $package = 'php-magpierss'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

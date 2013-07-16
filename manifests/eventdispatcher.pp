@@ -1,4 +1,4 @@
-class php:eventdispatcher($ensure=latest) {
+class php::eventdispatcher($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:eventdispatcher($ensure=latest) {
       $package = 'php-event-dispatcher'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

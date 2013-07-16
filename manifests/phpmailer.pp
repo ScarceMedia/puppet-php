@@ -1,4 +1,4 @@
-class php:phpmailer($ensure=latest) {
+class php::phpmailer($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:phpmailer($ensure=latest) {
       $package = 'php-PHPMailer'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

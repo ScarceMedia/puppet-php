@@ -1,4 +1,4 @@
-class php:radius($ensure=latest) {
+class php::radius($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:radius($ensure=latest) {
       $package = 'php-pecl-radius'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

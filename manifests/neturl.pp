@@ -1,4 +1,4 @@
-class php:neturl($ensure=latest) {
+class php::neturl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:neturl($ensure=latest) {
       $package = 'php-net-url'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

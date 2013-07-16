@@ -1,4 +1,4 @@
-class php:snmp($ensure=latest) {
+class php::snmp($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:snmp($ensure=latest) {
       $package = 'php-snmp'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

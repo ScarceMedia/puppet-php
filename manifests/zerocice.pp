@@ -1,4 +1,4 @@
-class php:zerocice($ensure=latest) {
+class php::zerocice($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:zerocice($ensure=latest) {
       $package = 'php-zeroc-ice'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:xmlrpc2($ensure=latest) {
+class php::xmlrpc2($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:xmlrpc2($ensure=latest) {
       $package = 'php-xml-rpc2'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

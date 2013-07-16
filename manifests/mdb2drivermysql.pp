@@ -1,4 +1,4 @@
-class php:mdb2drivermysql($ensure=latest) {
+class php::mdb2drivermysql($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:mdb2drivermysql($ensure=latest) {
       $package = 'php-mdb2-driver-mysql'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

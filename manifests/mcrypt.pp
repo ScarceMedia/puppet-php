@@ -1,4 +1,4 @@
-class php:mcrypt($ensure=latest) {
+class php::mcrypt($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:mcrypt($ensure=latest) {
       $package = 'php-mcrypt'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

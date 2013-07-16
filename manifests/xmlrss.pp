@@ -1,4 +1,4 @@
-class php:xmlrss($ensure=latest) {
+class php::xmlrss($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:xmlrss($ensure=latest) {
       $package = 'php-xml-rss'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:imagetext($ensure=latest) {
+class php::imagetext($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:imagetext($ensure=latest) {
       $package = 'php-image-text'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

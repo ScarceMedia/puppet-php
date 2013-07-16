@@ -1,4 +1,4 @@
-class php:mapscript($ensure=latest) {
+class php::mapscript($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:mapscript($ensure=latest) {
       $package = 'php5-mapscript'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

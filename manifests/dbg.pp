@@ -1,4 +1,4 @@
-class php:dbg($ensure=latest) {
+class php::dbg($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:dbg($ensure=latest) {
       $package = 'php5-dbg'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:getid3($ensure=latest) {
+class php::getid3($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:getid3($ensure=latest) {
       $package = 'php-getid3'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

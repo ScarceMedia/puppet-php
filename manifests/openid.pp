@@ -1,4 +1,4 @@
-class php:openid($ensure=latest) {
+class php::openid($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:openid($ensure=latest) {
       $package = 'php-openid'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

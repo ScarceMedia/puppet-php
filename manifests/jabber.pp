@@ -1,4 +1,4 @@
-class php:jabber($ensure=latest) {
+class php::jabber($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:jabber($ensure=latest) {
       $package = 'libphp-jabber'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

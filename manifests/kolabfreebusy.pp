@@ -1,4 +1,4 @@
-class php:kolabfreebusy($ensure=latest) {
+class php::kolabfreebusy($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:kolabfreebusy($ensure=latest) {
       $package = 'php-kolab-freebusy'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

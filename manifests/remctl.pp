@@ -1,4 +1,4 @@
-class php:remctl($ensure=latest) {
+class php::remctl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:remctl($ensure=latest) {
       $package = 'php5-remctl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

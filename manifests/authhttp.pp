@@ -1,4 +1,4 @@
-class php:authhttp($ensure=latest) {
+class php::authhttp($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:authhttp($ensure=latest) {
       $package = 'php-auth-http'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

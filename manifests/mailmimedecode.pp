@@ -1,4 +1,4 @@
-class php:mailmimedecode($ensure=latest) {
+class php::mailmimedecode($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:mailmimedecode($ensure=latest) {
       $package = 'php-mail-mimedecode'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

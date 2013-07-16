@@ -1,4 +1,4 @@
-class php:codesniffer($ensure=latest) {
+class php::codesniffer($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:codesniffer($ensure=latest) {
       $package = 'php-codesniffer'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

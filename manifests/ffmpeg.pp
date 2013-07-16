@@ -1,4 +1,4 @@
-class php:ffmpeg($ensure=latest) {
+class php::ffmpeg($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:ffmpeg($ensure=latest) {
       $package = 'php5-ffmpeg'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

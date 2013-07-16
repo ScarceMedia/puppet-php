@@ -1,4 +1,4 @@
-class php:netsieve($ensure=latest) {
+class php::netsieve($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netsieve($ensure=latest) {
       $package = 'php-net-sieve'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

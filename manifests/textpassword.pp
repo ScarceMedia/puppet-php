@@ -1,4 +1,4 @@
-class php:textpassword($ensure=latest) {
+class php::textpassword($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:textpassword($ensure=latest) {
       $package = 'php-text-password'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

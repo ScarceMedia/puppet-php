@@ -1,4 +1,4 @@
-class php:jpgraph($ensure=latest) {
+class php::jpgraph($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:jpgraph($ensure=latest) {
       $package = 'libphp-jpgraph'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:auth($ensure=latest) {
+class php::auth($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:auth($ensure=latest) {
       $package = 'php-auth'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:mdb2driverpgsql($ensure=latest) {
+class php::mdb2driverpgsql($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:mdb2driverpgsql($ensure=latest) {
       $package = 'php-mdb2-driver-pgsql'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

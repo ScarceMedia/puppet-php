@@ -1,4 +1,4 @@
-class php:ps($ensure=latest) {
+class php::ps($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:ps($ensure=latest) {
       $package = 'php5-ps'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

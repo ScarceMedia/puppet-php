@@ -1,4 +1,4 @@
-class php:authpam($ensure=latest) {
+class php::authpam($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:authpam($ensure=latest) {
       $package = 'php5-auth-pam'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

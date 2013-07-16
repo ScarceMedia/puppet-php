@@ -1,4 +1,4 @@
-class php:cachelite($ensure=latest) {
+class php::cachelite($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:cachelite($ensure=latest) {
       $package = 'php-cache-lite'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

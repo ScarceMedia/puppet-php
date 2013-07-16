@@ -1,4 +1,4 @@
-class php:snoopy($ensure=latest) {
+class php::snoopy($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:snoopy($ensure=latest) {
       $package = 'libphp-snoopy'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

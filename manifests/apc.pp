@@ -1,4 +1,4 @@
-class php:apc($ensure=latest) {
+class php::apc($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:apc($ensure=latest) {
       $package = 'php-pecl-apc'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

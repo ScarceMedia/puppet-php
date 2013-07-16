@@ -1,4 +1,4 @@
-class php:web($ensure=latest) {
+class php::web($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:web($ensure=latest) {
       $package = 'mlmmj-php-web'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

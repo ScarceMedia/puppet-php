@@ -1,4 +1,4 @@
-class php:geoip($ensure=latest) {
+class php::geoip($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:geoip($ensure=latest) {
       $package = 'php-pecl-geoip'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:netlmtp($ensure=latest) {
+class php::netlmtp($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netlmtp($ensure=latest) {
       $package = 'php-net-lmtp'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

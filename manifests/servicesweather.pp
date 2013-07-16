@@ -1,4 +1,4 @@
-class php:servicesweather($ensure=latest) {
+class php::servicesweather($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:servicesweather($ensure=latest) {
       $package = 'php-services-weather'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

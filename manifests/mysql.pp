@@ -1,4 +1,4 @@
-class php:mysql($ensure=latest) {
+class php::mysql($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:mysql($ensure=latest) {
       $package = 'php-mysql'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

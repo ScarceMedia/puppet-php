@@ -1,4 +1,4 @@
-class php:uuid($ensure=latest) {
+class php::uuid($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:uuid($ensure=latest) {
       $package = 'php-pecl-uuid'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

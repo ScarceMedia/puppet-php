@@ -1,4 +1,4 @@
-class php:pclzip($ensure=latest) {
+class php::pclzip($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:pclzip($ensure=latest) {
       $package = 'libphp-pclzip'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

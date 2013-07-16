@@ -1,4 +1,4 @@
-class php:idn($ensure=latest) {
+class php::idn($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:idn($ensure=latest) {
       $package = 'php-idn'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

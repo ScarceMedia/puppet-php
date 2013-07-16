@@ -1,4 +1,4 @@
-class php:textile($ensure=latest) {
+class php::textile($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:textile($ensure=latest) {
       $package = 'php-textile'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

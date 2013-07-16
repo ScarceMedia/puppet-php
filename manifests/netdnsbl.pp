@@ -1,4 +1,4 @@
-class php:netdnsbl($ensure=latest) {
+class php::netdnsbl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netdnsbl($ensure=latest) {
       $package = 'php-net-dnsbl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

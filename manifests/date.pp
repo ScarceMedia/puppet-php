@@ -1,4 +1,4 @@
-class php:date($ensure=latest) {
+class php::date($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:date($ensure=latest) {
       $package = 'php-pear-Date'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:netsmartirc($ensure=latest) {
+class php::netsmartirc($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netsmartirc($ensure=latest) {
       $package = 'php-net-smartirc'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

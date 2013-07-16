@@ -9,7 +9,7 @@ class php {
       $package = 'php'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

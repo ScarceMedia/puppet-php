@@ -1,4 +1,4 @@
-class php:dev($ensure=latest) {
+class php::dev($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:dev($ensure=latest) {
       $package = 'sbnc-php-dev'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

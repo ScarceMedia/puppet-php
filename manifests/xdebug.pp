@@ -1,4 +1,4 @@
-class php:xdebug($ensure=latest) {
+class php::xdebug($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:xdebug($ensure=latest) {
       $package = 'php-pecl-xdebug'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

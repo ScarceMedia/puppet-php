@@ -1,4 +1,4 @@
-class php:sybase($ensure=latest) {
+class php::sybase($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:sybase($ensure=latest) {
       $package = 'php5-sybase'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:suhosin($ensure=latest) {
+class php::suhosin($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:suhosin($ensure=latest) {
       $package = 'php-suhosin'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:pgsql($ensure=latest) {
+class php::pgsql($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:pgsql($ensure=latest) {
       $package = 'php-pgsql'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

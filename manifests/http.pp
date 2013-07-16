@@ -1,4 +1,4 @@
-class php:http($ensure=latest) {
+class php::http($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:http($ensure=latest) {
       $package = 'php-pear-HTTP'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

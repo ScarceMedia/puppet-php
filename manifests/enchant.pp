@@ -1,4 +1,4 @@
-class php:enchant($ensure=latest) {
+class php::enchant($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:enchant($ensure=latest) {
       $package = 'php-enchant'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

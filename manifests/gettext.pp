@@ -1,4 +1,4 @@
-class php:gettext($ensure=latest) {
+class php::gettext($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:gettext($ensure=latest) {
       $package = 'php-php-gettext'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

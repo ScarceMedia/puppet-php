@@ -1,4 +1,4 @@
-class php:scripts($ensure=latest) {
+class php::scripts($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:scripts($ensure=latest) {
       $package = 'cakephp-scripts'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:authsasl($ensure=latest) {
+class php::authsasl($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:authsasl($ensure=latest) {
       $package = 'php-auth-sasl'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

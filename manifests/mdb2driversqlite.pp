@@ -1,4 +1,4 @@
-class php:mdb2driversqlite($ensure=latest) {
+class php::mdb2driversqlite($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:mdb2driversqlite($ensure=latest) {
       $package = 'php-mdb2-driver-sqlite'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

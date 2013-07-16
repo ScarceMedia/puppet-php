@@ -1,4 +1,4 @@
-class php:cryptcbc($ensure=latest) {
+class php::cryptcbc($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:cryptcbc($ensure=latest) {
       $package = 'php-crypt-cbc'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

@@ -1,4 +1,4 @@
-class php:jpgraphexamples($ensure=latest) {
+class php::jpgraphexamples($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:jpgraphexamples($ensure=latest) {
       $package = 'libphp-jpgraph-examples'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

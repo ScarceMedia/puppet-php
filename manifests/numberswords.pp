@@ -1,4 +1,4 @@
-class php:numberswords($ensure=latest) {
+class php::numberswords($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:numberswords($ensure=latest) {
       $package = 'php-numbers-words'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

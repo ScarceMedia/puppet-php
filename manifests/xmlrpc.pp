@@ -1,4 +1,4 @@
-class php:xmlrpc($ensure=latest) {
+class php::xmlrpc($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:xmlrpc($ensure=latest) {
       $package = 'php-xmlrpc'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

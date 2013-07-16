@@ -1,4 +1,4 @@
-class php:netdime($ensure=latest) {
+class php::netdime($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -7,7 +7,7 @@ class php:netdime($ensure=latest) {
       $package = 'php-net-dime'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

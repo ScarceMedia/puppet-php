@@ -1,4 +1,4 @@
-class php:benchmark($ensure=latest) {
+class php::benchmark($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:benchmark($ensure=latest) {
       $package = 'php-pear-Benchmark'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

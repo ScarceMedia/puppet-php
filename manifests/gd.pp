@@ -1,4 +1,4 @@
-class php:gd($ensure=latest) {
+class php::gd($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:gd($ensure=latest) {
       $package = 'php-gd'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 

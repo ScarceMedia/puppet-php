@@ -1,4 +1,4 @@
-class php:mdb2($ensure=latest) {
+class php::mdb2($ensure=installed) {
   include ::php
   include ::php::params
 
@@ -10,7 +10,7 @@ class php:mdb2($ensure=latest) {
       $package = 'php-pear-MDB2'
     }
     default: {
-      fail("$::{osfamily} is not supported.")
+      fail("osfamily '${::osfamily}' is not supported.")
     }
   }
 
