@@ -16,4 +16,12 @@ class php::pear($ensure=installed) {
   package{$package:
     ensure => $ensure
   }
+
+  exec{'php-pear-clear-cache':
+    command     => 'pear clear-cache',
+    path        => ['/bin', '/usr/bin'],
+    refreshonly => true,
+    require     => Package[$package]
+  }  
+
 }
