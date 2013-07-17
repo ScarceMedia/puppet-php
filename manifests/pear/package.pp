@@ -2,7 +2,7 @@ define php::pear::package($ensure) {
   include ::php::pear
   
   case $ensure {
-    'present', 'installed' {
+    'present', 'installed': {
       exec{"php-pear-config-set-${name}":
         command => "pear install '${name}'",
         path    => ['/bin', '/usr/bin'],
@@ -10,7 +10,7 @@ define php::pear::package($ensure) {
         require => Exec['php-pear-clear-cache']
       }        
     }
-    'absent' {
+    'absent': {
       exec{"php-pear-config-set-${name}":
         command => "pear uninstall '${name}'",
         path    => ['/bin', '/usr/bin'],
