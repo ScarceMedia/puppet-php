@@ -1,4 +1,4 @@
-class php:exactimage($ensure=latest) {
+class php::exactimage($ensure=latest) {
   include ::php::params
 
   case $::osfamily {
